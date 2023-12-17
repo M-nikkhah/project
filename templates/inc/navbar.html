@@ -1,0 +1,61 @@
+{% load static %}
+
+	<div id="header-wrap">
+
+
+
+		<header id="header">
+			<div class="container-fluid">
+				<div class="row">
+
+					<div class="col-md-2">
+<!--							<div class="action-menu">-->
+
+<!--								<div class="search-bar">-->
+<!--									<a href="#" class="search-button search-toggle" data-selector="#header-wrap">-->
+<!--										<i class="icon icon-search"></i>-->
+<!--									</a>-->
+<!--									<form role="search" method="get" class="search-box">-->
+<!--										<input class="search-field text search-input" placeholder="Search"-->
+<!--											type="search">-->
+<!--									</form>-->
+<!--								</div>-->
+<!--							</div>-->
+
+					</div>
+
+					<div class="col-md-10">
+
+						<nav id="navbar">
+							<div class="main-menu stellarnav">
+								<ul class="menu-list">
+									<li class="menu-item active"><a href="{% url 'home:home' %}" > خانه</a></li>
+{#									<li class="menu-item has-sub">#}
+{#										<i class="icon icon-user"></i><span>حساب کاربری</span>#}
+{##}
+{#										<ul>#}
+											{% if request.user.is_authenticated %}
+											<li class="active"><a href="{% url 'accounts:user_logout' %}"> خروج </a></li>
+											{% else %}
+											<li><a href="{% url 'accounts:user_register' %}">ثبت نام </a></li>
+											<li><a href="{% url 'accounts:user_login' %}">ورود</a></li>
+											{% endif %}
+{#										</ul>#}
+{##}
+{#									</li>#}
+                                    <li class="menu-item"><a href="{% url 'orders:cart' %}" class="cart for-buy"><i class="icon icon-clipboard"></i><span>سبدخرید</span></a></li>
+
+								</ul>
+
+
+
+							</div>
+						</nav>
+
+					</div>
+
+				</div>
+			</div>
+		</header>
+
+	</div><!--header-wrap-->
